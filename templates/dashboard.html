@@ -1,0 +1,67 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block content %}
+{% include '_alerts.html' %}
+ <section id="listing" class="py-4">
+    <div class="container">
+
+
+
+            <div class="section_title mb-33">
+                        <h3>Your Uploads</h3>
+                    </div>
+            <div class="row">
+                <div class="col-xl-12"></div></div>
+
+      <div class="row">
+        <div class="col-md-9">
+          <!-- Home Main Image -->
+          <img src="{{ cuser.photo_main.url }}" alt="" class="img-main img-fluid mb-3">
+          <!-- Thumbnails -->
+          <div class="row mb-5 thumbs">
+              {% if listing.photo_1 %}
+                <div class="col-md-2">
+                  <a href="{{ cuser.photo_1.url }}" data-lightbox="home-images">
+                    <img src="{{ cuser.photo_1.url }}" alt="" class="img-fluid">
+                  </a>
+                </div>
+              {% endif %}
+              {% if cuser.photo_2 %}
+                <div class="col-md-2">
+                  <a href="{{ cuser.photo_2.url }}" data-lightbox="home-images">
+                    <img src="{{ cuser.photo_2.url }}" alt="" class="img-fluid">
+                  </a>
+                </div>
+                {% endif %}
+              {% if cuser.photo_3 %}
+                <div class="col-md-2">
+                  <a href="{{ cuser.photo_3.url }}" data-lightbox="home-images">
+                    <img src="{{ cuser.photo_3.url }}" alt="" class="img-fluid">
+                  </a>
+                </div>
+                {% endif %}
+              {% if cuser.photo_4 %}
+                <div class="col-md-2">
+                  <a href="{{ cuser.photo_4.url }}" data-lightbox="home-images">
+                    <img src="{{ cuser.photo_4.url }}" alt="" class="img-fluid">
+                  </a>
+                </div>
+                {% endif %}
+              {% if cuser.photo_5 %}
+                <div class="col-md-2">
+                  <a href="{{ cuser.photo_5.url }}" data-lightbox="home-images">
+                    <img src="{{ cuser.photo_5.url }}" alt="" class="img-fluid">
+                  </a>
+                </div>
+                {% endif %}
+              {% if cuser.photo_6 %}
+                <div class="col-md-2">
+                  <a href="{{ cuser.photo_6.url }}" data-lightbox="home-images">
+                    <img src="{{ cuser.photo_6.url}}" alt="" class="img-fluid">
+                  </a>
+                </div>
+                {% endif %}
+
+          </div></div></div></div></section>
+
+{% endblock %}

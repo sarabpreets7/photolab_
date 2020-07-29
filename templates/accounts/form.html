@@ -1,0 +1,32 @@
+{% extends 'pages/base.html' %}
+{% block content %}
+{% include '_alerts.html' %}
+    {% if user.is_authenticated  %}
+
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="inquiryModalLabel">Upload files</h2>
+          <button type="button" class="close" data-dismiss="modal">
+
+          </button>
+        </div>
+        <div class="modal-body">
+          <form enctype="multipart/form-data"  method="post" >
+            {% csrf_token %}
+
+            {{ form.as_p}}
+            <input type="submit" class="btn btn-primary" value="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    {% else %}
+    <div class="alert alert-primary" role="alert">
+  You need to login in order to upload <a href="{% url 'accounts:register' %}" class="alert-link">Not a user? Register!</a>.
+</div>
+
+    {% endif %}
+
+{% endblock %}
